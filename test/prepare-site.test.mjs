@@ -18,6 +18,7 @@ test('deployment copy keeps source and attribution, excludes local state and pre
   for (const omitted of ['.git', '.secrets', '.deploy', 'node_modules', 'dist', 'assets']) assert.ok(!entries.includes(omitted));
   const manifest = JSON.parse(await readFile(path.join(target, '.openai/hosting.json'), 'utf8'));
   assert.deepEqual(manifest, { capabilities: ['mcp'] });
+  assert.ok((await readFile(path.join(target, 'pnpm-workspace.yaml'), 'utf8')).includes('esbuild: true'));
   assert.equal(JSON.parse(await readFile(path.join(target, 'package.json'), 'utf8')).author.name, 'EggYDX');
   const before = await readFile(path.join(target, 'README.md'), 'utf8');
   assert.notEqual(run().status, 0);
