@@ -1,12 +1,25 @@
 <div align="center">
-
+  
+<pre>
+    __             _ ____  _ __      __ 
+   / /   ___ _  __(_) __ \(_) /___  / /_
+  / /   / _ \ \/ / / /_/ / / / __ \/ __/
+ / /___/  __/>  < / ____/ / / /_/ / /_  
+/_____/\___/_/\_\/_/   /_/_/\____/\__/  
+</pre>
+   
 # LexiPilot
 
 **今天背的词，今天就用起来。**
 
-你的墨墨背词副驾，把今日学习数据带进 ChatGPT，让复习、出题和精读更顺手。
+别让复习曲线变成跳水心电图。你的墨墨背单词 AI 赛博副驾。
 
-部署作者：[**@EggYDX**](https://github.com/EggYDX) · MCP · ChatGPT Sites · MIT
+<p align="center">
+  <img src="https://img.shields.io/badge/MCP-Compatible-blue?style=flat-square" alt="MCP Compatible">
+  <img src="https://img.shields.io/badge/Data%20Source-墨墨背单词-orange?style=flat-square" alt="Momo">
+  <img src="https://img.shields.io/badge/Brain_Damage-Prevented-brightgreen?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/License-MIT-black?style=flat-square" alt="License">
+</p>
 
 [部署指南](docs/DEPLOY.md) · [接口说明](docs/API.md) · [开发笔记](docs/NOTES.md)
 
@@ -14,9 +27,23 @@
 
 ---
 
+### 🚨 灵魂发问
+
+- 墨墨每天弹窗催命，你却连点进去的勇气都没有？
+- 感觉今天学了 300 词超级充实，切回主页发现 280 个全凭肌肉记忆瞎蒙？
+- 想要复盘学习进度，但那一堆艾宾浩斯柱状图看得比高数还头大？
+
+**LexiPilot**专治以上症状。它是一个基于 **Model Context Protocol (MCP)** 的轻量服务，将你的**墨墨背单词**学习数据与ChatGPT深度打通。
+
+从今往后，无需手动截屏看统计，呼唤你的 AI，它就能顺着网线精准定位你的背词战况。
+
+---
+
+---
+
 ## 🧭 它能陪你做什么？
 
-LexiPilot 连接墨墨的官方 API，ChatGPT 负责把数据变成你想要的学习内容。
+你负责背，LexiPilot负责帮你把数据翻译成人话~
 
 | 场景 | 你可以这样说 |
 | --- | --- |
@@ -25,14 +52,16 @@ LexiPilot 连接墨墨的官方 API，ChatGPT 负责把数据变成你想要的�
 | 模糊词强化 | “挑出今天反馈为模糊或忘记的词，帮我辨析，再出几道题。” |
 | 一对一小测 | “用今天的词考我，一次一题，我答完后再讲解。” |
 
-**每个人部署自己的私人 Site，连接自己的墨墨账号。** 部署完成后，电脑关机也能继续在 ChatGPT 中使用。
+代码全开源，通过本地安全部署Token，你的**学习黑历史**绝不上传任何第三方云端。
 
 ## 🚀 把部署交给 Codex
 
-准备一个拥有 **ChatGPT Sites 部署及插件创建权限** 的账号，再复制下面这段话给 Codex。代码块右上角可以直接复制。
+准备一个拥有 **ChatGPT Sites部署及插件创建权限** 的账号，再复制下面这段话给 Codex。代码块右上角可以直接复制。
+
+**目前ChatGPT Sites的部署及插件创建仅支持Plus、Pro等付费套餐或工作区账户中**，具体请参阅[官方说明](https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites)。
 
 ```text
-请将 https://github.com/EggYDX/LexiPilot 部署为我自己的私人 ChatGPT 插件，名称保持 LexiPilot。
+请将 https://github.com/EggYDX/LexiPilot 部署为我自己的私人ChatGPT插件。
 
 先获取仓库，阅读 AGENTS.md 和 docs/DEPLOY.md，再实际完成部署：
 1. 使用 scripts/prepare-site.mjs 准备独立的部署副本。
@@ -41,7 +70,7 @@ LexiPilot 连接墨墨的官方 API，ChatGPT 负责把数据变成你想要的�
 4. 发布 Site，安装并连接它自动生成的 LexiPilot 插件。
 5. 实际调用 get_study_progress 和 get_today_words，展示今日进度与前 5 个单词，完成验收。
 
-保留简介中的“部署作者：@EggYDX”和 MIT 署名。说明保持简洁，聚焦当天查询。
+说明保持简洁，聚焦当天查询。
 除了账号授权、私密凭证和费用确认，其余步骤请自行完成。
 ```
 
@@ -53,9 +82,9 @@ LexiPilot 连接墨墨的官方 API，ChatGPT 负责把数据变成你想要的�
 
 Site 发布后会生成对应的私人插件。在 **Plugins → Personal → Created by you → LexiPilot** 中安装并连接，然后在聊天输入框用 `@` 选择它。[官方托管与安装说明](https://help.openai.com/en/articles/20001547-hosting-a-plugin-with-chatgpt-sites)
 
-## 📖 来一篇“今天的词”精读
+## 💬实弹演练
 
-在聊天中选中 `@LexiPilot`，复制：
+接入后，你随时可以对你的 AI 发号施令，在聊天中选中 `@LexiPilot`，然后输入：
 
 ```text
 先读取我今天的墨墨学习单词和第一次反馈，再从中选 20 个词，写一篇约 400–600 词、B2 难度的英文精读文章。
@@ -86,7 +115,7 @@ Site 发布后会生成对应的私人插件。在 **Plugins → Personal → Cr
 | `get_word_info` | 墨墨词汇 ID 和拼写 |
 | `get_study_records` | 单词反馈、累计学习次数、标签及下次复习时间 |
 
-日期按北京时间展示；单词查询默认 50 条，最多 1000 条。状态字段保持墨墨原值，完整参数见[接口说明](docs/API.md)。
+返回的时间均为北京时间；单词查询默认50条 ，最多1000条。状态字段会保持墨墨原值，完整参数见[接口说明](docs/API.md)。
 
 ## 想先跑一下代码？
 
