@@ -1,0 +1,36 @@
+{
+  "name": "lexipilot",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "你的墨墨背词副驾：查看今日进度与单词，让复习和出题更顺手。部署作者：@EggYDX。",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/local-server.mjs",
+    "test:live": "node scripts/live-smoke.mjs",
+    "check:public": "node scripts/check-public.mjs",
+    "prepare:site": "node scripts/prepare-site.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "esbuild": "0.28.2"
+  },
+  "author": {
+    "name": "EggYDX",
+    "url": "https://github.com/EggYDX"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/EggYDX/LexiPilot.git",
+    "type": "git"
+  }
+}

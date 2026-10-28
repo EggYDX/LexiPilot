@@ -1,0 +1,12 @@
+node_modules/
+dist/
+outputs/
+work/
+.deploy/
+.secrets/
+.sites-local/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
