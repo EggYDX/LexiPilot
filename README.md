@@ -14,7 +14,7 @@
 
 别让复习曲线变成跳水心电图。你的墨墨背单词 AI 赛博副驾。
 
-[![M8ven Score](https://m8ven.ai/badge/mcp/eggydx-lexipilot-1y94a1?v=03cc65c49632b214a626a7604399b968)](https://m8ven.ai/mcp/eggydx-lexipilot-1y94a1?s=readme)
+[![M8ven Score](https://m8ven.ai/badge/mcp/eggydx-lexipilot-1y94a1?v=64508dfe89ce7f741b100ccf9d87c2a3)](https://m8ven.ai/mcp/eggydx-lexipilot-1y94a1?s=readme)
 <p align="center">
   <img src="https://img.shields.io/badge/MCP-Compatible-blue?style=flat-square" alt="MCP Compatible">
   <img src="https://img.shields.io/badge/Data%20Source-墨墨背单词-orange?style=flat-square" alt="Momo">
